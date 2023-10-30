@@ -5,6 +5,7 @@ import BottomNav from './components/BottomNav'
 import TermlyCookie from './components/TermlyCookie'
 import Script from 'next/script'
 import GoogleAnalytics from './components/GoogleAnalytics'
+import ResponsiveAppBar from './components/ResponsiveAppBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -29,8 +30,9 @@ export default function RootLayout({
       
 
       <body className={inter.className}>
-        <BottomNav />
+        <ResponsiveAppBar/>
         {children}
+        <BottomNav />
       </body>
     </html>
   )
