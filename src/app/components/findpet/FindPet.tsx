@@ -33,11 +33,11 @@ const FindPet = () => {
                 ) : null
             }
             
-            <Box justifyContent={'space-evenly'} sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', rowGap: 6 }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
                 {[...pets.keys()].map((key) => {
                     let pet = pets.get(key)!
                     return (
-                        <Stack key={key} spacing={1}>
+                        <Stack key={key} spacing={1} padding={3} paddingInline={6}>
                             <EmbedInstagram url={pet.permalink} key={pet.permalink} />
                             {(pet.adoptionProcess) ?
                                 <Button variant="contained" target="_blank" href={pet.adoptionProcess}>Adoption Process"</Button> :
