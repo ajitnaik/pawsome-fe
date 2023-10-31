@@ -1,8 +1,8 @@
 import { Backdrop, CircularProgress } from "@mui/material";
 import { useEffect, useState } from "react";
-import { ShelterInfo } from "../types";
 import ShelterDetails from "./ShelterDetails";
 import dynamic from "next/dynamic";
+import { ShelterInfo } from "@/app/types";
 // import RegisterShelter from "./RegisterShelter";
 
 const RegisterShelter = dynamic(() => import('./RegisterShelter'))
