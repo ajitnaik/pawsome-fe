@@ -1,0 +1,18 @@
+{
+  "LocaleLayout": {
+    "title": "PawsomeSearch"
+  },
+  "FindPet": {
+    "title": "Find your Perfect Pet",
+    "location": "Location",
+    "petType": "Dog / Cat ?",
+    "search": "Search",
+    "dog": "Dog",
+    "cat": "Cat",
+    "noAnimalsFound": "No pets found. Try searching by State or Country",
+    "adoptionProcess": "Adoption Process",
+    "apply": "Apply",
+    "noApplyLinkMessage": "Visit the Instagram page to apply",
+    "recommendation": "Recommendation"
+  }
+}

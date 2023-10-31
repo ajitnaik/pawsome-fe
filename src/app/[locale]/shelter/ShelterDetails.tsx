@@ -1,9 +1,9 @@
 import { LoadingButton } from "@mui/lab"
 import { Box, Button, Container, Dialog, DialogActions, DialogContent, DialogContentText, Stack, Typography } from "@mui/material"
 import { useState } from "react"
-import { ShelterInfo } from "../types"
 import { Auth } from "aws-amplify"
 import dynamic from "next/dynamic"
+import { ShelterInfo } from "@/app/types"
 // import RegisterShelter from "./RegisterShelter"
 
 const RegisterShelter = dynamic(() => import('./RegisterShelter'))

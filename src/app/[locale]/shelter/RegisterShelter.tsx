@@ -1,5 +1,3 @@
-import { ShelterInfo } from "../types";
-import { getPlaces } from "../AutocompleteApi";
 // import MultipleLocationSelector from "../components/MultipleLocationSelector";
 import SuccessDialog from "../components/SuccessDialog";
 import { Auth } from "aws-amplify";
@@ -7,6 +5,8 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import { Container, Grid, Typography, FormControl, Stack, TextField, FormControlLabel, Checkbox, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
 import { FormEvent, useState } from "react";
 import dynamic from "next/dynamic";
+import { ShelterInfo } from "@/app/types";
+import { getPlaces } from "@/app/AutocompleteApi";
 
 
 const MultipleLocationSelector = dynamic(() => import('../components/MultipleLocationSelector'))

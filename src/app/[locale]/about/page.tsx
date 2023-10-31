@@ -9,7 +9,7 @@ const About = () => {
       <Container>
         <br />
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', rowGap: 2 }}>
-          <Image src={LunaPic} alt="Luna Image" sizes="100vw" style={{ borderRadius: '30%', width: '50%', height: '50%'}} />
+          <Image src={LunaPic} alt="Luna Image" sizes="100vw" style={{ borderRadius: '30%', width: '50%', height: '50%' }} />
           <Typography textAlign="justify" sx={{ wordWrap: "break-word" }} gutterBottom paragraph>
             Greetings, I'm Ajit—a dedicated animal enthusiast who has been fortunate to gain diverse experiences working with a wide array of creatures.
             My journey has taken me from the streets of India, where I connected with stray dogs, to the heart of the United States, where I volunteered at an animal shelter, and even to Germany, where I provided pet sitting services.

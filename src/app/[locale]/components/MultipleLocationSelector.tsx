@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { Autocomplete, TextField } from '@mui/material';
-import { getSuggestions } from '../AutocompleteApi';
+import { getSuggestions } from '@/app/AutocompleteApi';
 
 interface MultipleLocationSelectorProps {
     setLocationIds: Dispatch<SetStateAction<string[]>>,

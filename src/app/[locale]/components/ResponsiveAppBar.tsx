@@ -11,8 +11,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { PetSearchNav, ShelterNav } from '../types';
 import Link from 'next/link';
+import { PetSearchNav, ShelterNav } from '@/app/types';
 
 let navMap = new Map<string, string>([
   [PetSearchNav, "/"],

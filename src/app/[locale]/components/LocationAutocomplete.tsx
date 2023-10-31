@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { Autocomplete, TextField } from '@mui/material';
-import { getPlaces, getSuggestions } from '../AutocompleteApi';
+import { getPlaces, getSuggestions } from '@/app/AutocompleteApi';
+import { useTranslations } from 'next-intl';
 
 interface LocationAutocompleteProps {
   setLocations: Dispatch<SetStateAction<string[]>>,
@@ -8,7 +9,8 @@ interface LocationAutocompleteProps {
 
 const LocationAutocomplete = (props: LocationAutocompleteProps) => {
 
-   const [options, setOptions] = useState<{ id: string, label: string }[]>([]);
+  const t = useTranslations('FindPet');
+  const [options, setOptions] = useState<{ id: string, label: string }[]>([]);
 
   const onSelect = async (option: { id: string, label: string }) => {
     const { label } = option;
@@ -41,7 +43,7 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
       freeSolo={true}
       id="combo-box-demo"
       options={options}
-      style={{ backgroundColor: 'white', borderRadius: '6px'}}
+      style={{ backgroundColor: 'white', borderRadius: '6px' }}
       sx={{ width: 300 }}
       onChange={(event, newValue) => {
         if (newValue == null || (typeof newValue === 'string')) {
@@ -57,7 +59,7 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
         onChange(newInputValue);
       }}
       filterOptions={(x) => x}
-      renderInput={(params) => <TextField {...params} label="Location" />}
+      renderInput={(params) => <TextField {...params} label={t('location')} />}
     />
   );
 }

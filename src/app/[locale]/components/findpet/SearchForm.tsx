@@ -7,10 +7,13 @@ import SelectPetType from './SelectPetType';
 import dynamic from 'next/dynamic';
 import { FindPetContext } from '@/app/contexts';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 const LocationAutocomplete = dynamic(() => import('../LocationAutocomplete'))
 
 const SearchForm = () => {
+  const t = useTranslations('FindPet');
+
   const [locations, setLocations] = useState<string[]>([]);
   let { setPets, setIsAlertVisible } = useContext(FindPetContext);
   const [petType, setPetType] = useState('');
@@ -100,9 +103,9 @@ const SearchForm = () => {
         p: 4,
         flexDirection: 'column',
       }}>
-      {/* <Typography variant="h3" textAlign={'center'}>
-        heading
-      </Typography> */}
+      <Typography variant="h3" textAlign={'center'}>
+      {t('title')}
+      </Typography>
       <LocationAutocomplete setLocations={setLocations} />
       <SelectPetType petType={petType} setPetType={setPetType} />
       {/* <FormControlLabel
@@ -120,10 +123,10 @@ const SearchForm = () => {
         loadingPosition="start"
         startIcon={<SearchIcon />}
       >
-        <span>Search</span>
+        <span>{t('search')}</span>
       </LoadingButton>
       <Container sx={{ textAlign: 'center' }}>
-        Recommendation": <Link href={"blog/findingyourperfectpet"}>Finding your Perfect Pet</Link>
+      {t('recommendation')}: <Link href={"blog/findingyourperfectpet"}>Finding your Perfect Pet</Link>
       </Container>
     </Box>
   );
