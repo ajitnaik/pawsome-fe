@@ -7,6 +7,7 @@ import BottomNav from './components/BottomNav';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import Script from 'next/script';
+import CookieBanner from './components/CookieBanner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,10 +49,10 @@ export default async function LocaleLayout({
 
     return (
         <html className="h-full" lang={locale}>
-            <Script
-                src={`https://cdn-cookieyes.com/client_data/4a7dc23985ed7f208f57e6eb/script.js`} strategy="beforeInteractive"
-            />
+            <head>
+            {process.env.NODE_ENV === 'production' && <CookieBanner />}
             <GoogleAnalytics />
+            </head>
             <body className={clsx(inter.className, 'flex h-full flex-col')}>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <ResponsiveAppBar />
