@@ -1,5 +1,4 @@
 import { Container, Typography } from '@mui/material'
-import { useTranslations } from 'next-intl';
 import React from 'react'
 
 const Imprint = () => {
