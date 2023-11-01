@@ -100,7 +100,6 @@ const SearchForm = () => {
         display: 'flex',
         alignItems: 'center',
         gap: 2,
-        p: 4,
         flexDirection: 'column',
       }}>
       <Typography variant="h3" textAlign={'center'}>
@@ -126,7 +125,7 @@ const SearchForm = () => {
         <span>{t('search')}</span>
       </LoadingButton>
       <Container sx={{ textAlign: 'center' }}>
-      {t('recommendation')}: <Link href={"blog/findingyourperfectpet"}>Finding your Perfect Pet</Link>
+      {t('recommendation')}: <Link href={"blog/finding-your-perfect-pet"}>Finding your Perfect Pet</Link>
       </Container>
     </Box>
   );

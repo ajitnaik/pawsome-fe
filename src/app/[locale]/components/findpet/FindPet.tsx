@@ -33,8 +33,8 @@ const FindPet = () => {
                     </>
                 ) : null
             }
-            
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
+
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                 {[...pets.keys()].map((key) => {
                     let pet = pets.get(key)!
                     return (

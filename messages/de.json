@@ -1,5 +1,49 @@
 {
-    "FindPet": {
-      "title": "Hallo!"
-    }
+  "LocaleLayout": {
+    "title": "PawsomeSearch"
+  },
+  "AppBar": {
+    "find": "Haustiere",
+    "shelter": "Tierheim",
+    "contact": "Kontakt",
+    "about": "Uber Uns"
+  },
+  "BottomNav": {
+    "imprint": "Impressum",
+    "dataPrivacy": "Datenschutz"
+  },
+  "FindPet": {
+    "title": "Finde dein perfektes Haustier",
+    "location": "Standort",
+    "petType": "Hund / Katze ?",
+    "search": "Suchen",
+    "dog": "Hund",
+    "cat": "Katze",
+    "noAnimalsFound": "Keine Haustiere gefunden. Versuchen Sie, nach Bundesland oder Land zu suchen",
+    "adoptionProcess": "Adoptionsverfahren",
+    "apply": "Bewerben",
+    "noApplyLinkMessage": "Besuchen Sie Instagram, um sich zu bewerben",
+    "recommendation": "Empfehlung"
+  },
+  "ShelterDetails": {
+    "title": "Ihr Tierheim",
+    "username": "Instagram Benutzername",
+    "locations": "Standorte",
+    "adoptionProcess": "Adoptionsverfahren",
+    "applicationForm": "Bewerbungsformular",
+    "update": "Tierheim Bearbeiten",
+    "delete": "Tierheim Löschen",
+    "signOut": "Abmelden"
+  },
+  "RegisterShelter": {
+    "title": "Geben Sie Ihren Instagram-Benutzernamen ein und wählen Sie die Orte aus, an denen die Haustiere zur Adoption verfügbar sind",
+    "username": "Instagram Benutzername",
+    "locations": "Standorte",
+    "adoptionProcessLink": "Link zum Adoptionsprozess",
+    "applicationFormLink": "Link zum Antragsformular",
+    "remote": "Klicken Sie bitte die Checkbox an, wenn Sie ein abgelegenes Tierheim sind und Tiere zu den ausgewählten Orten transportieren können.",
+    "submit": "Abschicken",
+    "cancel": "Stornieren",
+    "signOut": "Abmelden"
   }
+}

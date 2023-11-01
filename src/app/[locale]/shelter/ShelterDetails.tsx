@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Auth } from "aws-amplify"
 import dynamic from "next/dynamic"
 import { ShelterInfo } from "@/app/types"
+import { useTranslations } from "next-intl"
 // import RegisterShelter from "./RegisterShelter"
 
 const RegisterShelter = dynamic(() => import('./RegisterShelter'))
@@ -14,6 +15,7 @@ interface ShelterDetailsProps {
 }
 
 const ShelterDetails = (props: ShelterDetailsProps) => {
+    const t = useTranslations('ShelterDetails');
     console.log(props.shelterInfo)
     const [update, setUpdate] = useState(false);
     const [open, setOpen] = useState(false);
@@ -58,11 +60,11 @@ const ShelterDetails = (props: ShelterDetailsProps) => {
                 <Container>
                     <br />
                     <Typography variant="h4" gutterBottom textAlign={'center'}>
-                        Your Shelter
+                    {t('title')}
                     </Typography>
-                    <b>Instagram username: </b>{props.shelterInfo.username} <br /><br />
+                    <b>{t('username')}: </b>{props.shelterInfo.username} <br /><br />
                     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                        <b>Locations:  </b>{props.shelterInfo.locations.map((location) => {
+                        <b>{t('locations')}: </b> {props.shelterInfo.locations.map((location) => {
                             return (<div style={{ marginRight: 5 }} key={location}>{location},</div>)
                         })}
                     </Box><br />
@@ -70,11 +72,11 @@ const ShelterDetails = (props: ShelterDetailsProps) => {
                         <b>Website: </b><a target="_blank" href={props.shelterInfo.website}>{props.shelterInfo.website}</a><br /><br />
                     </Typography>
                     <Typography sx={{ wordWrap: "break-word" }} gutterBottom>
-                        <b>Adoption Process: </b><a target="_blank" href={props.shelterInfo.adoptionProcess}>{props.shelterInfo.adoptionProcess}</a> <br /><br />
+                        <b>{t('adoptionProcess')}: </b><a target="_blank" href={props.shelterInfo.adoptionProcess}>{props.shelterInfo.adoptionProcess}</a> <br /><br />
                     </Typography>
 
                     <Typography sx={{ wordWrap: "break-word" }} gutterBottom>
-                        <b>Application Form: </b><a target="_blank" href={props.shelterInfo.applicationUrl}>{props.shelterInfo.applicationUrl}</a><br /><br />
+                        <b>{t('applicationForm')}: </b><a target="_blank" href={props.shelterInfo.applicationUrl}>{props.shelterInfo.applicationUrl}</a><br /><br />
                     </Typography>
                     <Container>
                         <Stack spacing={2}>
@@ -83,13 +85,13 @@ const ShelterDetails = (props: ShelterDetailsProps) => {
                                 variant="contained"
                                 type="submit"
                                 onClick={() => setUpdate(true)}
-                            >Update Shelter</Button>
+                            >{t('update')}</Button>
                             <Button
                                 color="error"
                                 variant="contained"
                                 type="submit"
                                 onClick={handleClickOpen}
-                            >Delete Shelter</Button>
+                            >{t('delete')}</Button>
                             <Button
                                 color="primary"
                                 variant="contained"
@@ -97,7 +99,7 @@ const ShelterDetails = (props: ShelterDetailsProps) => {
                                 onClick={() => {
                                     Auth.signOut();
                                 }}
-                            >Sign Out</Button>
+                            >{t('signOut')}</Button>
                         </Stack>
                     </Container>
 

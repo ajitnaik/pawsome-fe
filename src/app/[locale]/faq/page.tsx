@@ -4,9 +4,10 @@ import React from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const FAQ = () => {
-  return (
-    <div>
-                  <Container>
+    return (
+        <div>
+            <br />
+            <Container>
                 <Typography variant="h5" gutterBottom textAlign={'center'} fontWeight="bold">
                     Frequently Answered Questions
                 </Typography>
@@ -23,9 +24,9 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                            Go to <b><Link href={"/shelter"}>Shelter</Link></b>. Create an account using your email address and enter the details of your shelter. 
-                            Note: Your shelter should have a business Instagram account. Switching to business Instagram account is very easy. 
-                            Just follow the process described here: <b><a target="_blank" href="https://help.instagram.com/502981923235522">Instagram switch to Business account</a></b> 
+                            Go to <b><Link href={"/shelter"}>Shelter</Link></b>. Create an account using your email address and enter the details of your shelter.
+                            Note: Your shelter should have a business Instagram account. Switching to business Instagram account is very easy.
+                            Just follow the process described here: <b><a target="_blank" href="https://help.instagram.com/502981923235522">Instagram switch to Business account</a></b>
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -39,7 +40,7 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                        Currently, there are no fees to use the platform. This platform is self-funded solely out of our love for animals.
+                            Currently, there are no fees to use the platform. This platform is self-funded solely out of our love for animals.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -54,10 +55,10 @@ const FAQ = () => {
                     <AccordionDetails>
                         <Typography>
                             Once you have registered and your instagram account is verified, you will be able to share the adoption posts on this platform.
-                            To label a post as an adoption post and share it on the platform, you'll have to: <br/>
-                            1. Mention <b>@pawsomesearch_</b> in the post caption<br/>
-                            2. Use <b>#dog</b> or <b>#cat</b> in the caption.<br/>
-                            Once the post is published on Instagram, it will appear on the platform within an hour. 
+                            To label a post as an adoption post and share it on the platform, you'll have to: <br />
+                            1. Mention <b>@pawsomesearch_</b> in the post caption<br />
+                            2. Use <b>#dog</b> or <b>#cat</b> in the caption.<br />
+                            Once the post is published on Instagram, it will appear on the platform within an hour.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -71,8 +72,8 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                            As the platform checks for new Instagram posts every hour, it can take upto one hour for the post to appear on the platform. 
-                            Also make sure that the post mentions <b>@pawsomesearch_</b> and has either <b>#dog</b> or <b>#cat</b>.   
+                            As the platform checks for new Instagram posts every hour, it can take upto one hour for the post to appear on the platform.
+                            Also make sure that the post mentions <b>@pawsomesearch_</b> and has either <b>#dog</b> or <b>#cat</b>.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -86,11 +87,11 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                        You can update some of the data in <b><Link href={"/shelter"}>Shelter</Link></b>. Update to data like your Instagram username or locations needs to be verified before it can be updated. For that, please reach out to us at <b><a href="mailto:info@pawsomesearch.com">info@pawsomesearch.com</a></b> .
+                            You can update some of the data in <b><Link href={"/shelter"}>Shelter</Link></b>. Update to data like your Instagram username or locations needs to be verified before it can be updated. For that, please reach out to us at <b><a href="mailto:info@pawsomesearch.com">info@pawsomesearch.com</a></b> .
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                <br/>
+                <br />
 
                 <Typography variant="h6" gutterBottom fontWeight="bold">
                     Adopters:
@@ -149,8 +150,8 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                            We use Google Analytics to track user interaction, and it will be utilized to enhance the platform.  
-                            Note: When you visit the Instagram page, Instagram will track your data. 
+                            We use Google Analytics to track user interaction, and it will be utilized to enhance the platform.
+                            Note: When you visit the Instagram page, Instagram will track your data.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -165,7 +166,7 @@ const FAQ = () => {
                     <AccordionDetails>
                         <Typography>
                             Please reach out to us at <b><a href="mailto:info@pawsomesearch.com">info@pawsomesearch.com</a></b>.
-                             We would be happy to hear from you
+                            We would be happy to hear from you
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -179,14 +180,14 @@ const FAQ = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
-                        Please reach out to us at <b><a href="mailto:info@pawsomesearch.com">info@pawsomesearch.com</a></b>
+                            Please reach out to us at <b><a href="mailto:info@pawsomesearch.com">info@pawsomesearch.com</a></b>
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
                 <br />
             </Container>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default FAQ

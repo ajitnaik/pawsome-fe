@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import ShelterDetails from "./ShelterDetails";
 import dynamic from "next/dynamic";
 import { ShelterInfo } from "@/app/types";
-// import RegisterShelter from "./RegisterShelter";
 
 const RegisterShelter = dynamic(() => import('./RegisterShelter'))
 

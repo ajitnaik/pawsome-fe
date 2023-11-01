@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react";
 import dynamic from "next/dynamic";
 import { ShelterInfo } from "@/app/types";
 import { getPlaces } from "@/app/AutocompleteApi";
+import { useTranslations } from "next-intl";
 
 
 const MultipleLocationSelector = dynamic(() => import('../components/MultipleLocationSelector'))
@@ -18,7 +19,7 @@ interface RegisterShelterProps {
 }
 
 const RegisterShelter = (props: RegisterShelterProps) => {
-
+    const t = useTranslations('RegisterShelter');
     const [locationIds, setLocationIds] = useState<string[]>([]);
     const [locationLabels, setLocationLabels] = useState<string[]>([]);
     const [username, setUsername] = useState<string>(props.shelterInfo.username);
@@ -92,7 +93,7 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                     alignItems="center">
                     <Container>
                         <Typography variant="h4" gutterBottom textAlign={'center'}>
-                        Enter your shelter details and select the locations where your Pets would be available for adoption
+                        {t('title')}
                         </Typography>
                     </Container>
                     <form onSubmit={handleSubmit}>
@@ -102,7 +103,7 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                                     required
                                     disabled={props.isUpdate}
                                     value={username}
-                                    label="Instagram username"
+                                    label={t('username')}
                                     onChange={(e) => setUsername(e.target.value)}
                                 ></TextField>
                                 {
@@ -111,45 +112,42 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                                             required
                                             disabled={true}
                                             value={props.shelterInfo.locations}
-                                            label="Locations"
+                                            label={t('locations')}
                                         ></TextField>
                                     ) :
                                         (<MultipleLocationSelector setLocationIds={setLocationIds} setLocationLabels={setLocationLabels} />)
                                 }
                                 <TextField
                                     inputMode="url"
-                                    type={"url"}
                                     value={website}
                                     label="Website"
                                     onChange={(e) => setWebsite(e.target.value)}
                                 ></TextField>
                                 <TextField
                                     inputMode="url"
-                                    type={"url"}
                                     value={adoptionProcess}
-                                    label="adoptionProcessLink"
+                                    label={t('adoptionProcessLink')}
                                     onChange={(e) => setAdoptionProcess(e.target.value)}
                                 ></TextField>
                                 <TextField
                                     inputMode="url"
-                                    type={"url"}
                                     value={url}
-                                    label="applicationFormLink"
+                                    label={t('applicationFormLink')}
                                     onChange={(e) => setUrl(e.target.value)}
                                 ></TextField>
                                 <FormControlLabel
                                     control={
                                         <Checkbox checked={remote} onChange={(e) => setRemote(e.target.checked)} />
                                     }
-                                    label="Check if you are a remote shelter and can transport animals to the selected locations"/>
+                                    label={t('remote')}/>
                                 <Button
                                     color="primary"
                                     variant="contained"
                                     type="submit"
                                     disabled={((locationIds.length == 0 && !props.isUpdate) || !username) ? true : false}
-                                >"Submit"</Button>
+                                >{t('submit')}</Button>
                                 <Button variant="contained" onClick={() => window.location.reload()}>
-                                    "Reset"
+                                {t('cancel')}
                                 </Button>
                                 <Button
                                     color="primary"
@@ -158,7 +156,7 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                                     onClick={() => {
                                         Auth.signOut();
                                     }}
-                                >Sign Out</Button>
+                                >{t('signOut')}</Button>
                             </Stack>
 
                         </FormControl>
@@ -175,8 +173,8 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText sx={{ wordWrap: "break-word" }} id="alert-dialog-description">
-                        <b>Instagram username: </b> <br /> {username} <br /><br />
-                        <b>Locations: </b><br />{
+                        <b>{t('username')}: </b> <br /> {username} <br /><br />
+                        <b>{t('locations')}: </b><br />{
                             props.isUpdate ?
                                 props.shelterInfo.locations.map((label) => {
                                     return <i key={label}>{label}<br /></i>
@@ -187,14 +185,14 @@ const RegisterShelter = (props: RegisterShelterProps) => {
                         }
                         <br />
                         <b>Website: </b>{website}<br /><br />
-                        <b>adoptionProcessLink: </b>{adoptionProcess}<br /><br />
-                        <b>applicationFormLink: </b>{url}
+                        <b>{t('adoptionProcessLink')}: </b>{adoptionProcess}<br /><br />
+                        <b>{t('applicationFormLink')}: </b>{url}
 
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                     <Button variant="contained" onClick={() => setOpen(false)} autoFocus>
-                        Cancel
+                    {t('cancel')}
                     </Button>
                     <LoadingButton
                         variant="contained"

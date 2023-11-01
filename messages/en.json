@@ -2,6 +2,16 @@
   "LocaleLayout": {
     "title": "PawsomeSearch"
   },
+  "AppBar": {
+    "find": "Pets",
+    "shelter": "Shelter",
+    "contact": "Contact",
+    "about": "About"
+  },
+  "BottomNav": {
+    "imprint": "Imprint",
+    "dataPrivacy": "Data protection"
+  },
   "FindPet": {
     "title": "Find your Perfect Pet",
     "location": "Location",
@@ -14,5 +24,26 @@
     "apply": "Apply",
     "noApplyLinkMessage": "Visit the Instagram page to apply",
     "recommendation": "Recommendation"
+  },
+  "ShelterDetails": {
+    "title": "Your Shelter",
+    "username": "Instagram username",
+    "locations": "Locations",
+    "adoptionProcess": "Adoption Process",
+    "applicationForm": "Application Form",
+    "update": "Update Shelter",
+    "delete": "Delete Shelter",
+    "signOut": "Sign Out"
+  },
+  "RegisterShelter": {
+    "title": "Enter your shelter details and select the locations where your Pets would be available for adoption",
+    "username": "Instagram username",
+    "locations": "Locations",
+    "adoptionProcessLink": "Link to Adoption Process",
+    "applicationFormLink": "Link to Application Form",
+    "remote": "Check if you are a remote shelter and can transport animals to the selected locations",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "signOut": "Sign Out"
   }
 }

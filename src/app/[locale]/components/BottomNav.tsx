@@ -14,11 +14,9 @@ export const BottomNav = () => {
             <Box sx={{ pb: '100px' }} />
             <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
                 <Toolbar sx={{ justifyContent: 'space-evenly' }}>
-                    {/* <Link sx={{ p: 1 }} color="inherit" component={NextLink} href={"/impressum"}>{I18n.get("Imprint")}</Link> */}
-                    <Link sx={{ p: 1 }} color="inherit" component={NextLink} href={"/impressum"}>Imprint</Link>
+                    <Link sx={{ p: 1 }} color="inherit" component={NextLink} href={"/imprint"}>Imprint</Link>
 
-                    {/* <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/datenschutz"}>{I18n.get("Data protection")}</Link> */}
-                    <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/datenschutz"}>Data protection</Link>
+                    <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/dataprotection"}>Data protection</Link>
 
                     {/* <Link href="#"
                         color="inherit"

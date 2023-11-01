@@ -13,20 +13,24 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
 import { PetSearchNav, ShelterNav } from '@/app/types';
+import { useTranslations } from 'next-intl';
 
-let navMap = new Map<string, string>([
-  [PetSearchNav, "/"],
-  [ShelterNav, "/shelter"],
-  ['FAQ', "/faq"],
-  ['Blog', "/blog"],
-  ['About', "/about"],
-  ['Contact', "/contact"],
-]);
 
 
 const ResponsiveAppBar = () => {
 
-  const pages = [PetSearchNav, ShelterNav, 'FAQ', 'Blog', 'Contact', 'About'];
+  const t = useTranslations('AppBar');
+
+  let navMap = new Map<string, string>([
+    [t('find'), "/"],
+    [t('shelter'), "/shelter"],
+    ['FAQ', "/faq"],
+    ['Blog', "/blog"],
+    [t('about'), "/about"],
+    [t('contact'), "/contact"],
+  ]);
+
+  const pages = [t('find'), t('shelter'), 'FAQ', 'Blog', t('contact'), t('about')];
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
