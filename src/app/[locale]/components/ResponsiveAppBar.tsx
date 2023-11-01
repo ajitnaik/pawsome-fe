@@ -12,7 +12,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
-import { PetSearchNav, ShelterNav } from '@/app/types';
 import { useTranslations } from 'next-intl';
 
 
@@ -49,7 +48,7 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component={Link}
             href="/"
             sx={{
               mr: 2,
