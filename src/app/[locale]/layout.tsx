@@ -50,7 +50,7 @@ export default async function LocaleLayout({
     return (
         <html className="h-full" lang={locale}>
             <head>
-            {process.env.NODE_ENV === 'production' && <CookieBanner />}
+            {/* {process.env.NODE_ENV === 'production' && <CookieBanner />} */}
             <GoogleAnalytics />
             </head>
             <body className={clsx(inter.className, 'flex h-full flex-col')}>
