@@ -50,11 +50,9 @@ export default async function LocaleLayout({
     return (
         <html className="h-full" lang={locale}>
             <head>
-            <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/8a6b7034b1d33.js" data-cmp-host="b.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="1"></script>
-            {/* <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/4a7dc23985ed7f208f57e6eb/script.js"></script>
             <Script
         src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="ea6e5c02-80b0-427a-bb27-3d4dfa656016"
-    /> */}
+    />
             {/* <script type="text/javascript" src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="ea6e5c02-80b0-427a-bb27-3d4dfa656016" ></script> */}
             {/* {process.env.NODE_ENV === 'production' && <CookieBanner />} */}
             <GoogleAnalytics />
