@@ -18,6 +18,8 @@ export const BottomNav = () => {
 
                     <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/dataprotection"}>Data protection</Link>
 
+                    <Link className="cky-banner-element" sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#">Cookies</Link>
+
                     {/* <Link href="#"
                         color="inherit"
                         sx={{ textAlign: 'center', p: 1 }}
