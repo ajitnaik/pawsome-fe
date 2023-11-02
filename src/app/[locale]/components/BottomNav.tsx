@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 
 import AppBar from '@mui/material/AppBar';
@@ -18,7 +19,14 @@ export const BottomNav = () => {
 
                     <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/dataprotection"}>Data protection</Link>
 
-                    <Link className="cky-banner-element" sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#">Cookies</Link>
+                    {/* <Link className="cky-banner-element" sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#">Cookies</Link> */}
+
+                    {/* <a href="#" onclick="window.displayPreferenceModal();return false;" id="termly-consent-preferences">Consent Preferences</a> */}
+                    <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#" 
+                    onClick={() => {
+                        (window as any).displayPreferenceModal();
+                        return false;
+                    }}>Cookies</Link>
 
                     {/* <Link href="#"
                         color="inherit"

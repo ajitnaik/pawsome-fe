@@ -50,6 +50,10 @@ export default async function LocaleLayout({
     return (
         <html className="h-full" lang={locale}>
             <head>
+            <Script
+        src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="ea6e5c02-80b0-427a-bb27-3d4dfa656016"
+    />
+            {/* <script type="text/javascript" src="https://app.termly.io/embed.min.js" data-auto-block="on" data-website-uuid="ea6e5c02-80b0-427a-bb27-3d4dfa656016" ></script> */}
             {process.env.NODE_ENV === 'production' && <CookieBanner />}
             <GoogleAnalytics />
             </head>

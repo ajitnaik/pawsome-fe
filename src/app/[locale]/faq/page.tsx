@@ -56,7 +56,7 @@ const FAQ = () => {
                         <Typography>
                             Once you have registered and your instagram account is verified, you will be able to share the adoption posts on this platform.
                             To label a post as an adoption post and share it on the platform, you'll have to: <br />
-                            1. Mention <b>@pawsomesearch_</b> in the post caption<br />
+                            1. Mention <b>@pawsomesearch</b> in the post caption<br />
                             2. Use <b>#dog</b> or <b>#cat</b> in the caption.<br />
                             Once the post is published on Instagram, it will appear on the platform within an hour.
                         </Typography>
@@ -73,7 +73,7 @@ const FAQ = () => {
                     <AccordionDetails>
                         <Typography>
                             As the platform checks for new Instagram posts every hour, it can take upto one hour for the post to appear on the platform.
-                            Also make sure that the post mentions <b>@pawsomesearch_</b> and has either <b>#dog</b> or <b>#cat</b>.
+                            Also make sure that the post mentions <b>@pawsomesearch</b> and has either <b>#dog</b> or <b>#cat</b>.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>

@@ -6,6 +6,7 @@ import { Pet } from "@/app/types";
 import SearchForm from "./SearchForm";
 import { FindPetContext } from "@/app/contexts";
 import { useTranslations } from "next-intl";
+import { InstagramEmbed } from "react-social-media-embed";
 
 const FindPet = () => {
     const t = useTranslations('FindPet');
@@ -14,6 +15,7 @@ const FindPet = () => {
 
     return (
         <Box>
+            <InstagramEmbed url={"https://www.instagram.com/p/CzD3e8Asjlu"} width={328} data-categories="analytics"/>
             {isAlertVisible ? (
                 <Alert
                     sx={{ textAlign: 'center' }}
