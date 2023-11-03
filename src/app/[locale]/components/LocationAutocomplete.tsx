@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Alert, Autocomplete, TextField } from '@mui/material';
+import { Alert, AlertTitle, Autocomplete, Link, TextField } from '@mui/material';
 import { getPlaces, getSuggestions } from '@/app/AutocompleteApi';
 import { useTranslations } from 'next-intl';
+import NextLink from 'next/link';
 
 interface LocationAutocompleteProps {
   setLocations: Dispatch<SetStateAction<string[]>>,
@@ -51,10 +52,17 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
     <>
       {!instagramConsent ? (
         <Alert
-          sx={{ textAlign: 'center' }}
           severity="warning"
-
-        >{t('enableInstagram')}</Alert>
+        >
+          <AlertTitle>Warning</AlertTitle>
+          {t('enableInstagram')}
+          <br/>
+          <Link color="inherit" component={NextLink} href="#" 
+            onClick={() => {
+                (window as any).displayPreferenceModal();
+                return false;
+            }}>Cookies</Link>
+          </Alert>
       ) : null}
       <Autocomplete
         freeSolo={true}
