@@ -23,7 +23,8 @@
     "adoptionProcess": "Adoption Process",
     "apply": "Apply",
     "noApplyLinkMessage": "Visit the Instagram page to apply",
-    "recommendation": "Recommendation"
+    "recommendation": "Recommendation",
+    "enableInstagram": "Please allow social networking cookies to see Instagram posts"
   },
   "ShelterDetails": {
     "title": "Your Shelter",

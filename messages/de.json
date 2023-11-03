@@ -23,7 +23,8 @@
     "adoptionProcess": "Adoptionsverfahren",
     "apply": "Bewerben",
     "noApplyLinkMessage": "Besuchen Sie Instagram, um sich zu bewerben",
-    "recommendation": "Empfehlung"
+    "recommendation": "Empfehlung",
+    "enableInstagram": "Please allow social networking cookies to see Instagram posts"
   },
   "ShelterDetails": {
     "title": "Ihr Tierheim",

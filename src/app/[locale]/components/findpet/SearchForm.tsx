@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Box, Container, Typography } from "@mui/material";
+import { Alert, Box, Container, Typography } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 import SearchIcon from '@mui/icons-material/Search';
 import { Pet } from "@/app/types";
@@ -18,11 +18,19 @@ const SearchForm = () => {
   let { setPets, setIsAlertVisible } = useContext(FindPetContext);
   const [petType, setPetType] = useState('');
   const [isLoading, setLoadingState] = useState(false);
+  const [instagramConsent, setInstagramConsent] = useState(false);
+
   const remote = true;
 
   const getPets = async () => {
+    const cookieStatus = JSON.parse(localStorage.getItem('TERMLY_API_CACHE') || '{}');
+    const instagramCookie = cookieStatus['TERMLY_COOKIE_CONSENT']['value']['social_networking']
+    setInstagramConsent(instagramCookie)
+    if (!instagramCookie) {
+      return;
+    }
     let pets = new Map<string, Pet>();
-    console.log("Pets: " , pets)
+    console.log("Pets: ", pets)
     let petsAvailable = false
     setPets(new Map());
     setLoadingState(true)
@@ -38,13 +46,13 @@ const SearchForm = () => {
           petsAvailable = true
           console.log(data)
           let newPets: Pet[] = data
-          
+
           const updateMap = new Map<string, Pet>()
-  
+
           for (const pet of newPets) {
             updateMap.set(pet.permalink, pet)
           }
-  
+
           setPets(updateMap);
         }
       })
@@ -66,13 +74,13 @@ const SearchForm = () => {
               console.log(data)
 
               let newPets: Pet[] = data
-          
+
               const updateMap = new Map<string, Pet>()
-      
+
               for (const pet of newPets) {
                 updateMap.set(pet.permalink, pet)
               }
-              setPets(new Map<string, Pet>([...pets,...updateMap]));
+              setPets(new Map<string, Pet>([...pets, ...updateMap]));
             }
           })
           .catch(error => {
@@ -103,7 +111,7 @@ const SearchForm = () => {
         flexDirection: 'column',
       }}>
       <Typography variant="h3" textAlign={'center'}>
-      {t('title')}
+        {t('title')}
       </Typography>
       <LocationAutocomplete setLocations={setLocations} />
       <SelectPetType petType={petType} setPetType={setPetType} />
@@ -125,7 +133,7 @@ const SearchForm = () => {
         <span>{t('search')}</span>
       </LoadingButton>
       <Container sx={{ textAlign: 'center' }}>
-      {t('recommendation')}: <Link href={"blog/finding-your-perfect-pet"}>Finding your Perfect Pet</Link>
+        {t('recommendation')}: <Link href={"blog/finding-your-perfect-pet"}>Finding your Perfect Pet</Link>
       </Container>
     </Box>
   );

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import { Autocomplete, TextField } from '@mui/material';
+import { Alert, Autocomplete, TextField } from '@mui/material';
 import { getPlaces, getSuggestions } from '@/app/AutocompleteApi';
 import { useTranslations } from 'next-intl';
 
@@ -11,6 +11,7 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
 
   const t = useTranslations('FindPet');
   const [options, setOptions] = useState<{ id: string, label: string }[]>([]);
+  const [instagramConsent, setInstagramConsent] = useState(true);
 
   const onSelect = async (option: { id: string, label: string }) => {
     const { label } = option;
@@ -24,6 +25,14 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
   };
 
   const onChange = async (event: string) => {
+    const cookieStatus = JSON.parse(localStorage.getItem('TERMLY_API_CACHE') || '{}');
+    const instagramCookie = cookieStatus['TERMLY_COOKIE_CONSENT']['value']['social_networking']
+    setInstagramConsent(instagramCookie)
+    if (!instagramCookie) {
+      setTimeout(() => {
+        setInstagramConsent(true);
+      }, 10000);
+    }
     if (event.length < 3) return;
     const result = await getSuggestions(event);
     const newOptions = [];
@@ -39,28 +48,37 @@ const LocationAutocomplete = (props: LocationAutocompleteProps) => {
   };
 
   return (
-    <Autocomplete
-      freeSolo={true}
-      id="combo-box-demo"
-      options={options}
-      style={{ backgroundColor: 'white', borderRadius: '6px' }}
-      sx={{ width: 300 }}
-      onChange={(event, newValue) => {
-        if (newValue == null || (typeof newValue === 'string')) {
-          props.setLocations([]);
+    <>
+      {!instagramConsent ? (
+        <Alert
+          sx={{ textAlign: 'center' }}
+          severity="warning"
 
-        } else {
-          onSelect(newValue);
-          setOptions([]);
-        }
-      }}
-      isOptionEqualToValue={(option, value) => option.label === value.label}
-      onInputChange={(event, newInputValue) => {
-        onChange(newInputValue);
-      }}
-      filterOptions={(x) => x}
-      renderInput={(params) => <TextField {...params} label={t('location')} />}
-    />
+        >{t('enableInstagram')}</Alert>
+      ) : null}
+      <Autocomplete
+        freeSolo={true}
+        id="combo-box-demo"
+        options={options}
+        style={{ backgroundColor: 'white', borderRadius: '6px' }}
+        sx={{ width: 300 }}
+        onChange={(event, newValue) => {
+          if (newValue == null || (typeof newValue === 'string')) {
+            props.setLocations([]);
+
+          } else {
+            onSelect(newValue);
+            setOptions([]);
+          }
+        }}
+        isOptionEqualToValue={(option, value) => option.label === value.label}
+        onInputChange={(event, newInputValue) => {
+          onChange(newInputValue);
+        }}
+        filterOptions={(x) => x}
+        renderInput={(params) => <TextField {...params} label={t('location')} />}
+      />
+    </>
   );
 }
 
