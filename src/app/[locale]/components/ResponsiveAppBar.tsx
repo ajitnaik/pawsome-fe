@@ -117,7 +117,7 @@ const ResponsiveAppBar = () => {
           </Box>
           <Box component="img" height="12%" width="12%" sx={{ display: { xs: 'flex', md: 'none' } }} src="/images/PawsomeLogo.png" />
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component={Link}
             href="/"
@@ -127,7 +127,7 @@ const ResponsiveAppBar = () => {
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 'bold',
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
