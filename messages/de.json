@@ -1,6 +1,7 @@
 {
   "LocaleLayout": {
-    "title": "PawsomeSearch"
+    "title": "PawsomeSearch",
+    "description": "Finde dein perfektes Haustier"
   },
   "AppBar": {
     "find": "Haustiere",

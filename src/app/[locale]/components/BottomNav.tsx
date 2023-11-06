@@ -19,21 +19,12 @@ export const BottomNav = () => {
 
                     <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href={"/dataprotection"}>Data protection</Link>
 
-                    {/* <Link className="cky-banner-element" sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#">Cookies</Link> */}
-
-                    {/* <a href="#" onclick="window.displayPreferenceModal();return false;" id="termly-consent-preferences">Consent Preferences</a> */}
                     <Link sx={{ textAlign: 'center', p: 1 }} color="inherit" component={NextLink} href="#" 
                     onClick={() => {
                         (window as any).displayPreferenceModal();
                         return false;
                     }}>Cookies</Link>
 
-                    {/* <Link href="#"
-                        color="inherit"
-                        sx={{ textAlign: 'center', p: 1 }}
-                        onClick={() => {
-                            (window as any).displayPreferenceModal(); return false;;
-                        }} >Cookie Preferences</Link> */}
                     <Box sx={{ flexGrow: 1 }} />
                     <IconButton color="inherit" target="_blank" href="https://www.facebook.com/pawsomesearch">
                         <Facebook />
